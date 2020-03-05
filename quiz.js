@@ -1,6 +1,7 @@
 // timer variable
 var timeEl = document.querySelector(".timer-out");
 
+
 //timer elements
 var secondsLeft = 100;
 
@@ -19,3 +20,13 @@ function setTimer() {
 
 setTimer();
 
+
+// remove 10 seconds on false test
+var truthy = confirm("okay for true, cancel for false");
+
+if (truthy) {
+    console.log("true");
+} else {
+    console.log("wrong! -10 sec");
+    secondsLeft = secondsLeft - 10; 
+}
