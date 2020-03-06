@@ -1,3 +1,16 @@
+/*header styles*/
+#quizTitle {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 15px;
+    background-color: powderblue;
+    margin: 0;
+}
+.sub-header {
+    background-color: lightskyblue;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 .timer-out {
     float:right;
     padding-right: 50px;
@@ -6,18 +19,9 @@
 .highscores {
     padding-left: 50px;
 }
-.sub-header {
-    background-color: lightskyblue;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-#quizTitle {
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 15px;
-    background-color: powderblue;
-    margin: 0;
-}
+
+
+/* button styles */
 .btn-style,
 .start-btn {
     background-color: blue ; 
@@ -26,8 +30,20 @@
 .btn-style:hover {
     background-color: lightblue;
 }
+.btn-style.correct {
+    background-color: limegreen;
+}
+.btn-style.wrong {
+    background-color: red;
+}
+/* buttons layout */
+.btn-grid{
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+}
 
-
+/*main container styles */
 .container-style {
     margin-top: 100px;
     width: 800px;
@@ -36,15 +52,11 @@
     background-color: lavender;
     border-radius:5px;
 }
+/* question output styles */
 #question {
-    padding: 10px 0 20px 50px;
+    padding: 10px 0 20px 30px;
+}
 
-}
-.btn-grid{
-    display: grid;
-    gap: 10px;
-    margin: 20px 0;
-}
 
 .hide{
     display:none;

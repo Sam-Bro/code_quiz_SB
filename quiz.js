@@ -4,6 +4,11 @@ var timeEl = document.querySelector(".timer-out");
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const questionContainerEl = document.getElementById("question-container");
+const questionEl = document.getElementById("question")
+const answerButtons = document.getElementById("answer-btns");
+
+
+let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener("click", function() {
     startGame()
@@ -30,15 +35,19 @@ function setTimer() {
 function startGame(){
     console.log('started');
     startButton.classList.add('hide');
+    /* shuffles questions */
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0;
     questionContainerEl.classList.remove('hide')
+    setNextQuestion()
 }
 
 function setNextQuestion() {
-
+    showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
-function showQuestion(quesiton) {
-    
+function showQuestion(question) {
+    questionEl.innerText = question.question
 }
 
 function selectAnswer() {
@@ -46,14 +55,26 @@ function selectAnswer() {
 }
 
 
+const questions = [
+    {
+        question: 'What is something that is a question?',
+        answers: [
+            {text: 'correct answer', correct: true},
+            {text: 'Wrong answer', correct: false},
+            {text: 'Wrong answer', correct: false},
+            {text: 'Wrong answer', correct: false},
 
+        ]
+    }
+]
 
 // remove 10 seconds on false test
 //var truthy = confirm("okay for true, cancel for false");
-
+/*
 if (truthy) {
     console.log("true");
 } else {
     console.log("wrong! -10 sec");
     secondsLeft = secondsLeft - 10; 
 }
+*/
