@@ -22,9 +22,7 @@
 
 
 /* button styles */
-.btn-style,
-.start-btn,
-.next-btn {
+.btn-style {
     background-color: blue; 
     color: white ;
 }
@@ -61,4 +59,9 @@
 
 .hide{
     display:none;
+}
+
+#result {
+    float: right;
+    padding-right: 50px;
 }
