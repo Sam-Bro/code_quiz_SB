@@ -1,20 +1,29 @@
 .timer-out {
     float:right;
     padding-right: 50px;
+    color: red;
 }
 .highscores {
     padding-left: 50px;
 }
+.sub-header {
+    background-color: lightskyblue;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 #quizTitle {
     text-align: center;
     padding-top: 50px;
+    padding-bottom: 15px;
+    background-color: powderblue;
+    margin: 0;
 }
 .btn-style {
-    background-color: blue !important; 
-    color: white !important;
+    background-color: blue ; 
+    color: white ;
 }
-.btn-style :hover {
-    background-color: green;
+.btn-style:hover {
+    background-color: lightblue;
 }
 .container-style {
     margin-top: 100px;
