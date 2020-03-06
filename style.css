@@ -18,13 +18,16 @@
     background-color: powderblue;
     margin: 0;
 }
-.btn-style {
+.btn-style,
+.start-btn {
     background-color: blue ; 
     color: white ;
 }
 .btn-style:hover {
     background-color: lightblue;
 }
+
+
 .container-style {
     margin-top: 100px;
     width: 800px;
@@ -43,7 +46,6 @@
     margin: 20px 0;
 }
 
-/*.hide{
+.hide{
     display:none;
 }
-*/

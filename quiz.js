@@ -1,6 +1,14 @@
 // timer variable
 var timeEl = document.querySelector(".timer-out");
 
+const startButton = document.getElementById("start-btn");
+const nextButton = document.getElementById("next-btn");
+const questionContainerEl = document.getElementById("question-container");
+
+startButton.addEventListener("click", function() {
+    startGame()
+    setTimer()
+});
 
 //timer elements
 var secondsLeft = 100;
@@ -18,7 +26,26 @@ function setTimer() {
     }, 1000)
 }
 
-setTimer();
+
+function startGame(){
+    console.log('started');
+    startButton.classList.add('hide');
+    questionContainerEl.classList.remove('hide')
+}
+
+function setNextQuestion() {
+
+}
+
+function showQuestion(quesiton) {
+    
+}
+
+function selectAnswer() {
+
+}
+
+
 
 
 // remove 10 seconds on false test
