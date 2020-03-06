@@ -1,3 +1,13 @@
 #quizTitle {
     text-align: center;
 }
+.btn-style {
+    background-color: blue !important; 
+    color: white !important;
+}
+.container-style {
+    width: 800px;
+    max-width: 80%;
+    padding:10px;
+    background-color: lavender;
+}
