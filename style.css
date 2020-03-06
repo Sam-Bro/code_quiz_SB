@@ -1,13 +1,40 @@
+.timer-out {
+    float:right;
+    padding-right: 50px;
+}
+.highscores {
+    padding-left: 50px;
+}
 #quizTitle {
     text-align: center;
+    padding-top: 50px;
 }
 .btn-style {
     background-color: blue !important; 
     color: white !important;
 }
+.btn-style :hover {
+    background-color: green;
+}
 .container-style {
+    margin-top: 100px;
     width: 800px;
     max-width: 80%;
     padding:10px;
     background-color: lavender;
+    border-radius:5px;
 }
+#question {
+    padding: 10px 0 20px 50px;
+
+}
+.btn-grid{
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/*.hide{
+    display:none;
+}
+*/

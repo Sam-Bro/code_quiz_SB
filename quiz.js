@@ -22,7 +22,7 @@ setTimer();
 
 
 // remove 10 seconds on false test
-var truthy = confirm("okay for true, cancel for false");
+//var truthy = confirm("okay for true, cancel for false");
 
 if (truthy) {
     console.log("true");
