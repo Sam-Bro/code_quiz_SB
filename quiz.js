@@ -102,10 +102,11 @@ function setStatusClass(element, correct) {
         element.classList.add("correct")
         ansResult.innerText = ("Correct!")
         ansResult.classList.remove("hide")
+        return;
     } else {
         element.classList.add("wrong")
         ansResult.innerText = ("Incorrect!")
-        secondsLeft = secondsLeft - 2.5; 
+        secondsLeft = secondsLeft - 2; 
     }
 }
 
@@ -114,47 +115,67 @@ function clearStatusClass(element) {
         element.classList.remove("wrong")
 }
 
+
+/* questions array */
 const questions = [
     {
-        question: 'What is something that is a question?',
+        question: 'A loop that never ends is referred to as a(n) _________.',
         answers: [
-            {text: 'correct answer', correct: true},
-            {text: 'Wrong answer', correct: false},
-            {text: 'Wrong answer', correct: false},
-            {text: 'Wrong answer', correct: false},
+            {text: 'While loop', correct: false},
+            {text: 'Infinite loop', correct: true},
+            {text: 'Recursive loop', correct: false},
+            {text: 'For loop', correct: false},
 
         ]
     },
     {
-        question: 'What is something that is a question?',
+        question: 'What is the process of finding errors and fixing them within a program?',
         answers: [
-            {text: 'correct answer', correct: true},
-            {text: 'Wrong answer', correct: false},
-            {text: 'Wrong answer', correct: false},
-            {text: 'Wrong answer', correct: false},
+            {text: 'Debugging', correct: true},
+            {text: 'Executing', correct: false},
+            {text: 'Scanning', correct: false},
+            {text: 'Compiling', correct: false},
 
         ]
     },
     {
-        question: 'What is something that is a question?',
+        question: 'Jim needs to execute a section of code ten times within a program. Which statement should he use?',
         answers: [
-            {text: 'correct answer', correct: true},
-            {text: 'Wrong answer', correct: false},
-            {text: 'Wrong answer', correct: false},
-            {text: 'Wrong answer', correct: false},
+            {text: 'if-Else', correct: false},
+            {text: 'for', correct: true},
+            {text: 'while', correct: false},
+            {text: 'if', correct: false},
+
+        ]
+    },
+    {
+        question: 'In JavaScript, what element is used to store and manipulate text?',
+        answers: [
+            {text: 'Variables', correct: false},
+            {text: 'Boolean', correct: false},
+            {text: 'Arrays', correct: true},
+            {text: 'Strings', correct: false},
+
+        ]
+    },
+    {
+        question: 'What is the type of loop that continues through a block of code as long as the specified condition remains TRUE?',
+        answers: [
+            {text: 'While loop', correct: true},
+            {text: 'Infinite loop', correct: false},
+            {text: 'Recursive loop', correct: false},
+            {text: 'For loop', correct: false},
+        ]
+    },
+    {
+        question: 'What is the name of CSS design that calls for fluid and adaptable elements based on the device resolution or size?',
+        answers: [
+            {text: 'Cascading', correct: false},
+            {text: 'Reactive', correct: false},
+            {text: 'Adjusting', correct: false},
+            {text: 'Responsive', correct: true},
 
         ]
     }
     
 ]
-
-// remove 10 seconds on false test
-//var truthy = confirm("okay for true, cancel for false");
-/*
-if (truthy) {
-    console.log("true");
-} else {
-    console.log("wrong! -10 sec");
-    secondsLeft = secondsLeft - 10; 
-}
-*/
