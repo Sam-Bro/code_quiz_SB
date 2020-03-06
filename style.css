@@ -23,8 +23,9 @@
 
 /* button styles */
 .btn-style,
-.start-btn {
-    background-color: blue ; 
+.start-btn,
+.next-btn {
+    background-color: blue; 
     color: white ;
 }
 .btn-style:hover {

@@ -32,8 +32,9 @@ function setTimer() {
 }
 
 
+
+
 function startGame(){
-    console.log('started');
     startButton.classList.add('hide');
     /* shuffles questions */
     shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -43,14 +44,35 @@ function startGame(){
 }
 
 function setNextQuestion() {
+    resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
+
 function showQuestion(question) {
     questionEl.innerText = question.question
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add("btn-style", "btn")
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerButtons.appendChild(button)
+    })
 }
 
-function selectAnswer() {
+function resetState() {
+    nextButton.classList.add('hide')
+    while (answerButtons.firstChild) {
+        answerButtons.removeChild(answerButtons.firstChild)
+    }
+}
+
+
+
+function selectAnswer(e) {
 
 }
 
