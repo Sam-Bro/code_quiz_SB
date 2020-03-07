@@ -12,6 +12,7 @@ const answerButtons = document.getElementById("answer-btns");
 const ansResult = document.getElementById("result");
 const highscoreBtn = document.getElementById("score-btn");
 const scoreScrn = document.getElementById('scores');
+const inputForm = document.getElementById('input-form')
 
 
 
@@ -22,6 +23,7 @@ let shuffledQuestions, currentQuestionIndex
 startButton.addEventListener("click", function() {
     startGame()
     setTimer()
+    document.getElementById('controls').classList.remove('center')
 });
 nextButton.addEventListener('click', function() {
     currentQuestionIndex++
@@ -40,7 +42,7 @@ clearButton.addEventListener('click', function() {
 finishButton.addEventListener('click', function() {
     scoreScrn.classList.remove('hide');
     finishButton.classList.add('hide');
-
+    inputForm.classList.remove('hide');
     hideQuiz();
     newScore();
 
@@ -129,7 +131,7 @@ function resetState() {
 
 
 
-function selectAnswer(e, timerInterval) {
+function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     setStatusClass(document.body, correct)
@@ -154,7 +156,7 @@ function setStatusClass(element, correct) {
         return;
     } else {
         element.classList.add("wrong")
-        ansResult.innerText = ("Incorrect!")
+        //ansResult.innerText = ("Incorrect!")
         secondsLeft = secondsLeft - 2; 
     }
 }
