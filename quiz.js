@@ -8,6 +8,7 @@ const questionContainerEl = document.getElementById("question-container");
 const questionEl = document.getElementById("question");
 const answerButtons = document.getElementById("answer-btns");
 const ansResult = document.getElementById("result");
+const highscoreBtn = document.getElementById("score-btn");
 
 var timerInterval;
 
@@ -21,6 +22,13 @@ nextButton.addEventListener('click', function() {
     currentQuestionIndex++
     setNextQuestion()
 })
+
+highscoreBtn.addEventListener('click', scoreClick)
+
+function scoreClick() {
+    document.getElementById('highscore-sec').classList.remove('hide');
+    startButton.classList.add('hide');
+}
 //timer elements
 var secondsLeft = 100;
 

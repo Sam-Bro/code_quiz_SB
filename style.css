@@ -65,3 +65,8 @@
     float: right;
     padding-right: 50px;
 }
+
+/* highscores styles*/
+.scores-h2 {
+    text-align: center;
+}
