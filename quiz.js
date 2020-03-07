@@ -12,7 +12,8 @@ const answerButtons = document.getElementById("answer-btns");
 const ansResult = document.getElementById("result");
 const highscoreBtn = document.getElementById("score-btn");
 const scoreScrn = document.getElementById('scores');
-const inputForm = document.getElementById('input-form')
+const inputForm = document.getElementById('input-form');
+const introMessage = document.getElementById('message');
 
 
 
@@ -24,6 +25,7 @@ startButton.addEventListener("click", function() {
     startGame()
     setTimer()
     document.getElementById('controls').classList.remove('center')
+    introMessage.classList.add('hide')
 });
 nextButton.addEventListener('click', function() {
     currentQuestionIndex++
@@ -58,6 +60,7 @@ function hideQuiz() {
     questionContainerEl.classList.add('hide');
     ansResult.classList.add('hide');
     nextButton.classList.add('hide');
+    introMessage.classList.add('hide')
 }
 
 function newScore() {
