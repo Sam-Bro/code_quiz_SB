@@ -34,6 +34,7 @@ submitButton.addEventListener('click', retrieveInitials)
 finishButton.addEventListener('click', function() {
     scoreScrn.classList.remove('hide');
     finishButton.classList.add('hide');
+
     hideQuiz();
     newScore();
 
@@ -55,6 +56,7 @@ function newScore() {
     userScore = secondsLeft;
     console.log("userScore: " + userScore)
     document.getElementById("your-score").textContent ="Your score was: " + userScore;
+
 }
 
 //timer elements
@@ -153,10 +155,12 @@ function clearStatusClass(element) {
         element.classList.remove("wrong")
 }
 
-/* retrieve user initials from input */
+/* retrieve user initials from input and store to local*/
 function retrieveInitials() {
     var x = document.getElementById("user-initials").value;
     document.getElementById("your-initials").innerHTML = x;
+    localStorage.setItem("usersInitials", x);
+    localStorage.setItem("usersScore", userScore);
   }
 
 
