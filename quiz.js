@@ -32,9 +32,17 @@ nextButton.addEventListener('click', function() {
     setNextQuestion()
 })
 
-highscoreBtn.addEventListener('click', scoreClick)
+highscoreBtn.addEventListener('click', function() {
+    scoreClick()
+    clearButton.classList.remove('hide')
+})
 
-submitButton.addEventListener('click', retrieveInitials)
+submitButton.addEventListener('click', function() {
+    retrieveInitials()
+    scoreClick()
+    clearButton.classList.remove('hide')
+    inputForm.classList.add('hide');
+})
 
 clearButton.addEventListener('click', function() {
     localStorage.clear();
@@ -53,6 +61,7 @@ finishButton.addEventListener('click', function() {
 function scoreClick() {
     scoreScrn.classList.remove('hide');
     startButton.classList.add('hide');
+    inputInitials.classList.remove('hide');
     hideQuiz()
 }
 
@@ -67,7 +76,6 @@ function newScore() {
     userScore = secondsLeft;
     console.log("userScore: " + userScore)
     document.getElementById("your-score").textContent ="Your score was: " + userScore;
-
 }
 
 const inputInitials = document.getElementById("your-initials");
@@ -79,7 +87,6 @@ function retrieveLocal() {
     for (var i = 0;i < localStorage.length; i++){
     inputInitials.innerHTML = localKey;
     inputScore.innerHTML = localStorage.getItem(localKey);
-    console.log(length)
 }
 }
 retrieveLocal()

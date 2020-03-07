@@ -44,7 +44,7 @@
         <!--high scores -->
         <section class="highscores-cont" id="highscore-sec">
             <article id="scores" class="hide">
-                <h2 class="scores-h2">HighScores</h2>
+                <h2 class="scores-h2" id="highscores-h2">HighScores</h2>
                 <section>
                     <article class="row">
                         <div class="col-sm-4">
@@ -52,7 +52,7 @@
                         </div>
                         <div class="col-sm-4"></div>
                         <div class="col-sm-4">
-                            <h4 id="your-initials"></h4>
+                            <h4 class="hide" id="your-initials"></h4>
                         </div>
                     </article>
                 </section>
@@ -60,10 +60,13 @@
             <form name="myForm" class="user-initials hide" id="input-form">
                 Input initials to save your high score, press clear to clear saved scores<input  type="text" class="form-control userin-field" id="user-initials" placeholder="Input your initials">
                 <button class="btn btn-style" id="submit-initials">submit</button>
-                <button class="btn btn-style" id="clear-local">clear</button>
             </form>
             </article>
             <h3 id="finText" class="finText hide">Finished!</h3>
+            <section class="center">
+                <button class="btn btn-style hide" id="clear-local">clear</button>
+            </section>
+            
         </section>
     </section>
     <script src="quiz.js"></script>
