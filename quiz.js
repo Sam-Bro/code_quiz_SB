@@ -70,6 +70,19 @@ function newScore() {
 
 }
 
+const inputInitials = document.getElementById("your-initials");
+const inputScore = document.getElementById("your-score");
+
+function retrieveLocal() {
+    var localKey = localStorage.key(0)
+    console.log(localStorage.length)
+    for (var i = 0;i < localStorage.length; i++){
+    inputInitials.innerHTML = localKey;
+    inputScore.innerHTML = localStorage.getItem(localKey);
+    console.log(length)
+}
+}
+retrieveLocal()
 //timer elements
 var secondsLeft = 100;
 
@@ -154,8 +167,8 @@ function setStatusClass(element, correct) {
     clearStatusClass(element)
     if(correct) {
         element.classList.add("correct")
-        ansResult.innerText = ("Correct!")
-        ansResult.classList.remove("hide")
+        //ansResult.innerText = ("Correct!")
+        //ansResult.classList.remove("hide")
         return;
     } else {
         element.classList.add("wrong")
@@ -173,8 +186,8 @@ function clearStatusClass(element) {
 function retrieveInitials() {
     var x = document.getElementById("user-initials").value;
     document.getElementById("your-initials").innerHTML = x;
-    localStorage.setItem("usersInitials", x);
-    localStorage.setItem("usersScore", userScore);
+    //localStorage.setItem("usersInitials", x);
+    localStorage.setItem(x, userScore);
   }
 
 
