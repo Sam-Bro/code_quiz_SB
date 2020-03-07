@@ -41,6 +41,9 @@
     gap: 10px;
     margin: 20px 0;
 }
+#submit-initials {
+    margin-top: 10px;
+}
 
 /*main container styles */
 .container-style {
@@ -70,4 +73,21 @@
 .scores-h2,
 .finText {
     text-align: center;
+}
+.scores-h2 {
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+#your-score,
+#your-initials {
+    text-align: center;
+}
+/* user initials input styles */
+.user-initials,
+.userin-field {
+    text-align: center;
+    margin-top: 10px;
+}
+#submit-btn {
+    margin-top: 10px;
 }

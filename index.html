@@ -20,7 +20,7 @@
         <h3 class="timer-out"></h3>
         <h3><a href="#" class="highscores" id="score-btn">View HighScores</a></h3>
     </section>
-
+    <!--quiz section-->
     <section class="container container-style">
         <article id="question-container" class="hide">
             <section id="question">question</section>
@@ -31,19 +31,35 @@
                 <button class="btn-style btn">Fourth answer</button>
             </section>
         </article>
-
+        <!-- buttons-->
         <section class="controls">
             <p id="result" class="hide"> result </p>
             <button id="start-btn" class="btn-style start-btn btn">start</button>
             <button id="next-btn" class="btn-style next-btn btn hide">next</button>
             <button id="finish-btn" class="btn-style finish-btn btn hide">finish</button>
         </section>
+        <!--high scores -->
         <section class="highscores-cont" id="highscore-sec">
             <article id="scores" class="hide">
                 <h2 class="scores-h2">HighScores</h2>
+                <section>
+                    <article class="row">
+                        <div class="col-sm-4">
+                        <h4 id="your-score"></h4>
+                        </div>
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">
+                            <h4 id="your-initials"></h4>
+                        </div>
+                    </article>
+                </section>
+             <!-- input field-->
+            <form name="myForm" class="user-initials">
+                Input initials to save your high score<input  type="text" class="form-control userin-field" id="user-initials" placeholder="Input your initials">
+                <button class="btn btn-style" id="submit-initials">submit</button>
+            </form>
             </article>
             <h3 id="finText" class="finText hide">Finished!</h3>
-            
         </section>
     </section>
     <p id="resulted">

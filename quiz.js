@@ -4,12 +4,15 @@ var timeEl = document.querySelector(".timer-out");
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const finishButton = document.getElementById("finish-btn");
+const submitButton = document.getElementById("submit-initials");
 const questionContainerEl = document.getElementById("question-container");
 const questionEl = document.getElementById("question");
 const answerButtons = document.getElementById("answer-btns");
 const ansResult = document.getElementById("result");
 const highscoreBtn = document.getElementById("score-btn");
 const scoreScrn = document.getElementById('scores');
+
+
 
 var timerInterval;
 
@@ -26,21 +29,32 @@ nextButton.addEventListener('click', function() {
 
 highscoreBtn.addEventListener('click', scoreClick)
 
+submitButton.addEventListener('click', retrieveInitials)
 //go to high scores screen
 finishButton.addEventListener('click', function() {
     scoreScrn.classList.remove('hide');
     finishButton.classList.add('hide');
     hideQuiz();
+    newScore();
+
 })
 
 function scoreClick() {
     scoreScrn.classList.remove('hide');
     startButton.classList.add('hide');
+    hideQuiz()
 }
 
 function hideQuiz() {
     questionContainerEl.classList.add('hide');
     ansResult.classList.add('hide');
+    nextButton.classList.add('hide');
+}
+
+function newScore() {
+    userScore = secondsLeft;
+    console.log("userScore: " + userScore)
+    document.getElementById("your-score").textContent ="Your score was: " + userScore;
 }
 
 //timer elements
@@ -57,7 +71,6 @@ function setTimer() {
         if (secondsLeft <= 0) {
             clearInterval(timerInterval);
             document.getElementById('finText').classList.remove('hide');
-            nextButton.classList.add('hide');
             hideQuiz();
         }
     }, 1000)
@@ -139,6 +152,12 @@ function clearStatusClass(element) {
         element.classList.remove("correct")
         element.classList.remove("wrong")
 }
+
+/* retrieve user initials from input */
+function retrieveInitials() {
+    var x = document.getElementById("user-initials").value;
+    document.getElementById("your-initials").innerHTML = x;
+  }
 
 
 /* questions array */
