@@ -5,6 +5,7 @@ const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const finishButton = document.getElementById("finish-btn");
 const submitButton = document.getElementById("submit-initials");
+const clearButton = document.getElementById("clear-local");
 const questionContainerEl = document.getElementById("question-container");
 const questionEl = document.getElementById("question");
 const answerButtons = document.getElementById("answer-btns");
@@ -30,6 +31,11 @@ nextButton.addEventListener('click', function() {
 highscoreBtn.addEventListener('click', scoreClick)
 
 submitButton.addEventListener('click', retrieveInitials)
+
+clearButton.addEventListener('click', function() {
+    localStorage.clear();
+})
+
 //go to high scores screen
 finishButton.addEventListener('click', function() {
     scoreScrn.classList.remove('hide');
@@ -74,6 +80,9 @@ function setTimer() {
             clearInterval(timerInterval);
             document.getElementById('finText').classList.remove('hide');
             hideQuiz();
+        } else if(finishButton.addEventListener('click', function(){
+            clearInterval(timerInterval);
+        })){
         }
     }, 1000)
 }
