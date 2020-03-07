@@ -9,6 +9,7 @@ const questionEl = document.getElementById("question");
 const answerButtons = document.getElementById("answer-btns");
 const ansResult = document.getElementById("result");
 const highscoreBtn = document.getElementById("score-btn");
+const scoreScrn = document.getElementById('scores');
 
 var timerInterval;
 
@@ -25,13 +26,25 @@ nextButton.addEventListener('click', function() {
 
 highscoreBtn.addEventListener('click', scoreClick)
 
+//go to high scores screen
+finishButton.addEventListener('click', function() {
+    scoreScrn.classList.remove('hide');
+    finishButton.classList.add('hide');
+    hideQuiz();
+})
+
 function scoreClick() {
-    document.getElementById('scores').classList.remove('hide');
+    scoreScrn.classList.remove('hide');
     startButton.classList.add('hide');
 }
 
+function hideQuiz() {
+    questionContainerEl.classList.add('hide');
+    ansResult.classList.add('hide');
+}
+
 //timer elements
-var secondsLeft = 10;
+var secondsLeft = 100;
 
 //timer function
 
@@ -44,9 +57,8 @@ function setTimer() {
         if (secondsLeft <= 0) {
             clearInterval(timerInterval);
             document.getElementById('finText').classList.remove('hide');
-            questionContainerEl.classList.add('hide');
-            ansResult.classList.add('hide');
             nextButton.classList.add('hide');
+            hideQuiz();
         }
     }, 1000)
 }
