@@ -26,11 +26,12 @@ nextButton.addEventListener('click', function() {
 highscoreBtn.addEventListener('click', scoreClick)
 
 function scoreClick() {
-    document.getElementById('highscore-sec').classList.remove('hide');
+    document.getElementById('scores').classList.remove('hide');
     startButton.classList.add('hide');
 }
+
 //timer elements
-var secondsLeft = 100;
+var secondsLeft = 10;
 
 //timer function
 
@@ -40,8 +41,12 @@ function setTimer() {
         timeEl.textContent = "time left: " + secondsLeft;
 
         //stop when seconds reach 0
-        if (secondsLeft === 0) {
+        if (secondsLeft <= 0) {
             clearInterval(timerInterval);
+            document.getElementById('finText').classList.remove('hide');
+            questionContainerEl.classList.add('hide');
+            ansResult.classList.add('hide');
+            nextButton.classList.add('hide');
         }
     }, 1000)
 }

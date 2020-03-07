@@ -67,6 +67,7 @@
 }
 
 /* highscores styles*/
-.scores-h2 {
+.scores-h2,
+.finText {
     text-align: center;
 }
