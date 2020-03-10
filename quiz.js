@@ -82,12 +82,24 @@ const inputInitials = document.getElementById("your-initials");
 const inputScore = document.getElementById("your-score");
 
 function retrieveLocal() {
-    var localKey = localStorage.key(0)
     console.log(localStorage.length)
-    for (var i = 0;i < localStorage.length; i++){
-    inputInitials.innerHTML = localKey;
-    inputScore.innerHTML = localStorage.getItem(localKey);
+    for (var i = 0; i < localStorage.length; i++){
+    var localKey = localStorage.key(i)
+
+    var initialsNode = document.createElement("LI");
+    var textInitials = document.createTextNode(localKey);
+    initialsNode.appendChild(textInitials);
+    document.getElementById("your-initials").appendChild(initialsNode);
+
+    var localScore = localStorage.getItem(localKey);
+    var scoreNode = document.createElement("LI");
+    var textscore = document.createTextNode(localScore);
+
+    
+    scoreNode.appendChild(textscore);
+    document.getElementById("your-score").appendChild(scoreNode);
 }
+
 }
 retrieveLocal()
 //timer elements
