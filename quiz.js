@@ -4,6 +4,7 @@ var timeEl = document.querySelector(".timer-out");
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const finishButton = document.getElementById("finish-btn");
+const retryButton = document.getElementById("retry-btn");
 const submitButton = document.getElementById("submit-initials");
 const clearButton = document.getElementById("clear-local");
 const questionContainerEl = document.getElementById("question-container");
@@ -35,6 +36,7 @@ nextButton.addEventListener('click', function() {
 highscoreBtn.addEventListener('click', function() {
     scoreClick()
     clearButton.classList.remove('hide')
+    retryButton.classList.remove('hide')
 })
 
 submitButton.addEventListener('click', function() {
@@ -47,12 +49,16 @@ submitButton.addEventListener('click', function() {
 clearButton.addEventListener('click', function() {
     localStorage.clear();
 })
+    retryButton.addEventListener('click', function() {
+    location.reload();
+})
 
 //go to high scores screen
 finishButton.addEventListener('click', function() {
     scoreScrn.classList.remove('hide');
     finishButton.classList.add('hide');
     inputForm.classList.remove('hide');
+    retryButton.classList.remove('hide')
     hideQuiz();
     newScore();
 
@@ -116,6 +122,7 @@ function setTimer() {
         if (secondsLeft <= 0) {
             clearInterval(timerInterval);
             document.getElementById('finText').classList.remove('hide');
+            retryButton.classList.remove('hide')
             hideQuiz();
         } else if(finishButton.addEventListener('click', function(){
             clearInterval(timerInterval);
@@ -140,6 +147,7 @@ function setNextQuestion() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
     ansResult.classList.add('hide')
+    ansResult.classList.remove("wrong", "correct")
 }
 
 
@@ -170,10 +178,7 @@ function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     setStatusClass(document.body, correct)
-    //create an array from answer buttons
-    Array.from(answerButtons.children).forEach(function(button) {
-        setStatusClass(button, button.dataset.correct)
-    })
+    
     if(shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
     } else {
@@ -183,16 +188,16 @@ function selectAnswer(e) {
 }
 
 function setStatusClass(element, correct) {
-    clearStatusClass(element)
     if(correct) {
-        element.classList.add("correct")
-        //ansResult.innerText = ("Correct!")
-        //ansResult.classList.remove("hide")
+        ansResult.innerText = ("Correct!")
+        ansResult.classList.remove("hide")
+        ansResult.classList.add("correct")
         return;
     } else {
-        element.classList.add("wrong")
-        //ansResult.innerText = ("Incorrect!")
-        secondsLeft = secondsLeft - 2; 
+        ansResult.innerText = ("Incorrect!")
+        secondsLeft = secondsLeft - 10; 
+        ansResult.classList.remove("hide")
+        ansResult.classList.add("wrong")
     }
 }
 

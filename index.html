@@ -48,11 +48,11 @@
                 <section>
                     <article class="row">
                         <div class="col-sm-4">
-                        <h4 id="your-score"></h4>
+                            <ul id="your-score" class="highscore-items"></ul>
                         </div>
                         <div class="col-sm-4"></div>
                         <div class="col-sm-4">
-                            <h4 class="hide" id="your-initials"></h4>
+                            <ul class="hide highscore-items" id="your-initials"></ul>
                         </div>
                     </article>
                 </section>
@@ -62,9 +62,10 @@
                 <button class="btn btn-style" id="submit-initials">submit</button>
             </form>
             </article>
-            <h3 id="finText" class="finText hide">Finished!</h3>
+            <h3 id="finText" class="finText hide">Times up!</h3>
             <section class="center">
                 <button class="btn btn-style hide" id="clear-local">clear</button>
+                <button id="retry-btn" class="btn-style restart-btn btn hide">retry</button>
             </section>
             
         </section>

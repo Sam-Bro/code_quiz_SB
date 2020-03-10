@@ -1,6 +1,7 @@
 body {
     background-color: #121212 !important;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    min-width: 380px;
 }
 /*header styles*/
 #quizTitle {
@@ -28,7 +29,7 @@ body {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 20px;
-
+    font-size: 20px;
 }
 #question {
     font-size: 24px;
@@ -42,10 +43,10 @@ body {
 .btn-style:hover {
     background-color: #03DAC5;
 }
-.btn-style.correct {
+.correct {
     background-color: limegreen;
 }
-.btn-style.wrong {
+.wrong {
     background-color: red;
 }
 #start-btn {
@@ -53,6 +54,9 @@ body {
     height: 50px;
     margin-bottom: 30px;
 
+}
+.restart-btn {
+    margin-top: 10px;
 }
 .center {
     text-align: center;
@@ -90,6 +94,7 @@ body {
 #result {
     float: right;
     padding-right: 50px;
+    padding: 10px 40px;
 }
 
 /* highscores styles*/
@@ -104,6 +109,11 @@ body {
 #your-score,
 #your-initials {
     text-align: center;
+}
+
+.highscore-items {
+    list-style-type: none;
+    font-size: 20px;
 }
 /* user initials input styles */
 .user-initials,
