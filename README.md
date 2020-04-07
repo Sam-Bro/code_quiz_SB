@@ -15,3 +15,5 @@ This project required building a timed quiz that stores high scores, the quiz co
     -After all questions have been answered, the user can store their initials and score
 
     -clear button clears local storage
+
+https://sam-bro.github.io/code_quiz_SB/
